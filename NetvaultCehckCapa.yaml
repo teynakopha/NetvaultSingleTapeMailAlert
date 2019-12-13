@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: NetvaultCapacity
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        editor: vscode
+    spec:
+      containers:
+      - name: NetvaultCapacity
+        image: harbor.its.local/library/netvault:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" 
+--- 
+kind: Service
+apiVersion: v1
+metadata:
+  name:  NetvaultCapacity
+spec:
+  selector:
+    name: NetvaultCapacity 
+  type:  LoadBalancer
+  ports:
+  - name:  http
+    port:  80
+    targetPort:  80
