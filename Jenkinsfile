@@ -1,6 +1,6 @@
 pipeline{
   environment {
-    registry = "harbor.its.local/library/myweb"
+    registry = "harbor.its.local/NetvaultCapacity"
     dockerImage = ""
   }
 
