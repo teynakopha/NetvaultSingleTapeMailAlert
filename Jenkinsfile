@@ -21,14 +21,20 @@ pipeline{
         }
         stage("push image"){
             steps{
-                docker.withRegistry( "" ) {
-                    dockerImage.push()
+                script{
+                    docker.withRegistry( "" ) {
+                        dockerImage.push()
+                    }
                 }
+
             }
         }
         stage("deploy app"){
             steps{
-                kubernetesDeploy(configs: "NetvaultCheckCapa.yaml", kubeconfigId: "newkubeconfig")
+                script{
+                    kubernetesDeploy(configs: "NetvaultCheckCapa.yaml", kubeconfigId: "newkubeconfig")
+                }
+                
             }
         }
 
