@@ -4,8 +4,8 @@ MAINTAINER Mr. Sattaya Banbua
 
 WORKDIR /home
 
-RUN apt-get update 
-RUN apt-get install cron
+RUN apt-get update -y
+RUN apt-get install cron -y
 RUN pip install -r lib.txt
 COPY ./checkTapeCapacity.py /home/checkTapeCapacity.py
 COPY ./lib.txt /home/lib.txt
