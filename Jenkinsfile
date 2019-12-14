@@ -1,6 +1,6 @@
 pipeline{
   environment {
-    registry = "harbor.its.local/netvault_capacity"
+    registry = "harbor.its.local/library/netvault_capacity"
     dockerImage = ""
   }
 
@@ -9,7 +9,7 @@ pipeline{
         stage("Check out git"){
             steps{
                 echo "====++++git clone repository++++===="
-                git 'https://github.com/teynakopha/jenkins-play.git'
+                git 'https://github.com/teynakopha/NetvaultSingleTapeMailAlert'
             }
         }
         stage("build image"){
