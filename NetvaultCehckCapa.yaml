@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: NetvaultCapacity
-        image: harbor.its.local/library/netvault:latest
+        image: harbor.its.local/netvault_capacity:latest
         resources:
           limits:
             memory: "128Mi"
