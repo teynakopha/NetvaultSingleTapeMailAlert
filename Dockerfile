@@ -11,6 +11,6 @@ COPY ./checkTapeCapacity.py /home/checkTapeCapacity.py
 COPY ./lib.txt /home/lib.txt
 COPY ./crontab /etc/crontab
 
-RUN pip install -r lib.txt \
-    && service status cron \
-    && service restart cron
+RUN pip install -r lib.txt 
+    #&& service status cron \
+    #&& service restart cron
